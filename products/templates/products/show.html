@@ -6,6 +6,13 @@
     <dt>Description</dt><dd>{{product.description}}</dd>
     <dt>Ages</dt><dd>{{product.age_range}}</dd>
     <dt>Price</dt><dd>{{product.price}}</dd>
+    {% with img=p.random_image %}
+      {% if img != None %}
+        {% for p in p.productimage_set.all %}
+          <dt class='right'> <img src='{{ img.image.url }}' alt=img.caption>  </dt>
+        {%endfor%}
+      {%endif%}
+    {%endwith%}
 </dl>
 {% endblock %}
 

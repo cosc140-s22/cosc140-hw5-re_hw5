@@ -20,6 +20,19 @@
 {% for p in products %}
     <tr>
         <td><a href="{% url 'show' p.id %}">{{ p.name }}</a>
+          {% with img=p.random_image %}
+            {% if img %}
+              {% if p.img.height > p.img.width %}
+                <td> <img src='{{ img.image.url }}' alt= '{{img.caption}}' height ="100">  </td>
+              {% else %}
+                <td class='right'> <img src='{{ img.image.url }}' alt='{{img.caption}}' width ="100">  </td>
+              {% endif %}
+            {% endif %}
+          {% endwith %} 
+
+        
+
+      
         <td>{{ p.description|truncatewords:5 }}
         <td class="right">{{ p.age_range }}
         <td class="right">{{ p.price|floatformat:2 }}
