@@ -8,5 +8,7 @@
 
 ## Feedback
 
-Once you commit and submit your work to Github, I'll update this section with feedback.
+N
+
+Sorting by name, price, age not implemented yet, filtering on price not implemented yet.  Images are looking basically fine.
 
